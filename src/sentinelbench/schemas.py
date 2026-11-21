@@ -1,6 +1,7 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 class PromptRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     prompt_id: str
     category: str
     domain: str 
